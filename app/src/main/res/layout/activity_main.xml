@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#888"
+    android:padding="20dp"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/halloWelt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:text="Hallo Welt!"
+        android:textSize="24dp"
+        app:fontFamily="@font/almendra_bold" />
+
+    <TextView
+        android:id="@+id/helloWorld"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:text="Hello World!"
+        android:textSize="24dp" />
+
+    <TextView
+        android:id="@+id/ciaoMondo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:textSize="24dp"
+        android:text="Ciao Mondo!"/>
+
+    <TextView
+        android:id="@+id/bonjourMonde"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:textSize="24dp"
+        android:text="Bonjour Monde!"/>
+
+</LinearLayout>
