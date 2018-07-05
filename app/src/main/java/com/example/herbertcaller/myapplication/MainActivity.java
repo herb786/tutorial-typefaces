@@ -1,13 +1,21 @@
 package com.example.herbertcaller.myapplication;
 
+import android.graphics.Color;
 import android.graphics.Typeface;
-import android.os.Build;
+import android.os.Bundle;
 import android.os.Handler;
-import android.provider.FontsContract;
 import android.support.v4.provider.FontRequest;
 import android.support.v4.provider.FontsContractCompat;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
+import android.text.SpannableString;
+import android.text.SpannableStringBuilder;
+import android.text.Spanned;
+import android.text.TextPaint;
+import android.text.style.BackgroundColorSpan;
+import android.text.style.BulletSpan;
+import android.text.style.ForegroundColorSpan;
+import android.text.style.StyleSpan;
+import android.text.style.TypefaceSpan;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
@@ -15,6 +23,10 @@ public class MainActivity extends AppCompatActivity {
     TextView helloWorld;
     TextView ciaoMondo;
     TextView bonjourMonde;
+    TextView inclusiveExclusive;
+    TextView inclusiveInclusive;
+    TextView exclusiveExclusive;
+    TextView exclusiveInclusive;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +36,10 @@ public class MainActivity extends AppCompatActivity {
         helloWorld = findViewById(R.id.helloWorld);
         ciaoMondo = findViewById(R.id.ciaoMondo);
         bonjourMonde = findViewById(R.id.bonjourMonde);
+        inclusiveExclusive = findViewById(R.id.inclusiveExclusive);
+        inclusiveInclusive = findViewById(R.id.inclusiveInclusive);
+        exclusiveExclusive = findViewById(R.id.exclusiveExclusive);
+        exclusiveInclusive = findViewById(R.id.exclusiveInclusive);
 
         String wendyOne400 = "name=Wendy One&weight=400";
         String lobsterTwo700Italic = "name=Lobster Two&weight=400&italic=1";
@@ -61,6 +77,30 @@ public class MainActivity extends AppCompatActivity {
         };
         FontsContractCompat.requestFont(this, request3, callback3, new Handler());
 
+        //final Typeface myTypeface = Typeface.createFromAsset(getAssets(), "Helvetica.otf");
+
+        String example = "0123456789";
+        SpannableStringBuilder builder = new SpannableStringBuilder(example);
+        builder.setSpan(new StyleSpan(Typeface.BOLD), 0, 5, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        builder.insert(0, "A");
+        builder.insert(6, "Z");
+        exclusiveExclusive.setText(builder);
+        builder = new SpannableStringBuilder(example);
+        builder.setSpan(new ForegroundColorSpan(Color.GREEN), 0, 5, Spanned.SPAN_EXCLUSIVE_INCLUSIVE);
+        builder.insert(0, "A");
+        builder.insert(6, "Z");
+        exclusiveInclusive.setText(builder);
+        builder = new SpannableStringBuilder(example);
+        builder.setSpan(new BackgroundColorSpan(Color.YELLOW), 0, 5, Spanned.SPAN_INCLUSIVE_EXCLUSIVE);
+        builder.insert(0, "A");
+        builder.insert(6, "Z");
+        inclusiveExclusive.setText(builder);
+        builder = new SpannableStringBuilder(example);
+        builder.setSpan(new BulletSpan(20, Color.BLUE), 0, 5, Spanned.SPAN_INCLUSIVE_INCLUSIVE);
+        builder.insert(0, "A");
+        builder.insert(6, "Z");
+        inclusiveInclusive.setText(builder);
+
     }
 
     private void loadHelloWorld(Typeface typeface) {
@@ -73,6 +113,24 @@ public class MainActivity extends AppCompatActivity {
 
     private void loadBonjourMonde(Typeface typeface) {
         bonjourMonde.setTypeface(typeface);
+    }
+
+    public TypefaceSpan typefaceSpan (final Typeface typeface){
+        return new TypefaceSpan("sans-serif") {
+
+            @Override
+            public void updateDrawState(TextPaint ds) {
+                super.updateDrawState(ds);
+                ds.setTypeface(typeface);
+            }
+
+            @Override
+            public void updateMeasureState(TextPaint paint) {
+                super.updateMeasureState(paint);
+                paint.setTypeface(typeface);
+            }
+
+        };
     }
 
 }
