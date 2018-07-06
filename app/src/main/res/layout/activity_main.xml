@@ -13,9 +13,9 @@
         android:id="@+id/halloWelt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="10dp"
+        android:padding="5dp"
         android:text="Hallo Welt!"
-        android:textSize="24dp"
+        android:textSize="20dp"
         app:fontFamily="@font/almendra_bold" />
 
     <TextView
@@ -24,54 +24,86 @@
         android:layout_height="wrap_content"
         android:padding="10dp"
         android:text="Hello World!"
-        android:textSize="24dp" />
+        android:textSize="20dp" />
 
     <TextView
         android:id="@+id/ciaoMondo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="10dp"
-        android:textSize="24dp"
+        android:padding="5dp"
+        android:textSize="20dp"
         android:text="Ciao Mondo!"/>
 
     <TextView
         android:id="@+id/bonjourMonde"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="10dp"
-        android:textSize="24dp"
+        android:padding="5dp"
+        android:textSize="20dp"
         android:text="Bonjour Monde!"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:textStyle="italic"
+        android:textSize="20dp"
+        android:text="Exclusive-Exclusive"/>
 
     <TextView
         android:id="@+id/exclusiveExclusive"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="10dp"
-        android:textSize="24dp"
+        android:padding="5dp"
+        android:textSize="20dp"
         android:text="Bonjour Monde!"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:textStyle="italic"
+        android:textSize="20dp"
+        android:text="Exclusive-Inclusive"/>
 
     <TextView
         android:id="@+id/exclusiveInclusive"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="10dp"
-        android:textSize="24dp"
+        android:padding="5dp"
+        android:textSize="20dp"
         android:text="Bonjour Monde!"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:textStyle="italic"
+        android:textSize="20dp"
+        android:text="Inclusive-Exclusive"/>
 
     <TextView
         android:id="@+id/inclusiveExclusive"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="10dp"
-        android:textSize="24dp"
+        android:padding="5dp"
+        android:textSize="20dp"
         android:text="Bonjour Monde!"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:textStyle="italic"
+        android:textSize="20dp"
+        android:text="Inclusive-Inclusive"/>
 
     <TextView
         android:id="@+id/inclusiveInclusive"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="10dp"
-        android:textSize="24dp"
+        android:padding="5dp"
+        android:textSize="20dp"
         android:text="Bonjour Monde!"/>
 
 </LinearLayout>
